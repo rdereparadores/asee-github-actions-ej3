@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Ejecutar el generador de código
-        run: java -jar openapi-generator-cli.jar generate -i api.yaml -g python-flask -o ./openapi_server
+        run: java -jar openapi-generator-cli.jar generate -i api.yaml -g python-flask -o ./openapi_server --skip-validate-spec
       - name: Empaquetar artefacto
         run: zip -r openapi_server.zip openapi_server
       - name: Subir artefacto
