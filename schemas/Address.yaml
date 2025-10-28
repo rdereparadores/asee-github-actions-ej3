@@ -1,0 +1,35 @@
+type: object
+description: Dirección postal.
+properties:
+  alias:
+    type: string
+    description: Alias.
+    example: Casa
+  recipientName:
+    type: string
+    description: Nombre completo del destinatario.
+    example: Iván Ruiz López
+  street:
+    type: string
+    description: Calle y número.
+    example: Av. de la Universidad S/N.
+  additionalInfo:
+    type: string
+    description: Información adicional (piso, puerta, etc.).
+    example: 1D.
+  city:
+    type: string
+    description: Ciudad.
+    example: Cáceres.
+  state:
+    type: string
+    description: Provincia.
+    example: Cáceres.
+  zipCode:
+    type: string
+    description: Código postal.
+    example: 10001
+  phoneNumber:
+    type: integer
+    description: Teléfono de contacto.
+    example: 600123123

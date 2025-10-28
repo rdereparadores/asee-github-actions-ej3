@@ -1,0 +1,11 @@
+type: object
+description: Error.
+properties:
+  code:
+    type: string
+    description: Código.
+    example: ERR-1
+  message:
+    type: string
+    description: Explicación.
+    example: "Faltan los siguientes campos obligatorios: id, role."

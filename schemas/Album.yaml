@@ -1,0 +1,55 @@
+type: object
+description: Álbum.
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Identificador.
+    example: 123e4567-e89b-12d3-a456-426614174000
+  title:
+    type: string
+    description: Título.
+    example: Nose
+  cover:
+    type: string
+    format: uri
+    description: URL de la imagen de portada.
+    example: https://www.undersounds.com/static/img/idj9h219w1ws.png
+  author:
+    $ref: 'Artist.yaml'
+  duration:
+    type: integer
+    format: int64
+    description: Duración total en segundos.
+    example: 3600
+  releaseDate:
+    type: string
+    format: date-time
+    description: Fecha de lanzamiento.
+  songs:
+    type: array
+    description: Lista de canciones incluidas.
+    items: 
+      $ref: 'Song.yaml'
+  pricing: 
+    type: object
+    description: Lista de precios según formato.
+    required:
+      - digital
+    properties:
+      cd:
+        type: integer
+        format: int64
+        example: 700
+      vinyl:
+        type: integer
+        format: int64
+        example: 1200
+      cassette:
+        type: integer
+        format: int64
+        example: 900
+      digital:
+        type: integer
+        format: int64
+        example: 400

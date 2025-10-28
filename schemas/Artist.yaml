@@ -1,0 +1,26 @@
+type: object
+description: Artista.
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Identificador.
+    example: 123e4567-e89b-12d3-a456-426614174000
+  artistName:
+    type: string
+    description: Nombre artístico.
+    example: Anuel AA
+  profileImg:
+    type: string
+    format: uri
+    description: URL de la imagen de perfil.
+    example: https://www.undersounds.com/static/img/s921h9sh129j.png
+  bannerImg:
+    type: string
+    format: uri
+    description: URL de la imagen del banner.
+    example: https://www.undersounds.com/static/img/sdj0iqhi1bws1w.png
+  biography:
+    type: string
+    description: Biografía.
+    example: Anuel AA hizo que sus canciones se escucharan hasta en la luna.

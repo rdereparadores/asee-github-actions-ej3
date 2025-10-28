@@ -1,0 +1,34 @@
+type: object
+description: Usuario.
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Identificador.
+    example: acde070d-8c4c-4f0d-9d8a-162843c10333
+  firstName:
+    type: string
+    description: Nombre.
+    example: John
+  lastName:
+    type: string
+    description: Apellidos.
+    example: Smith
+  email:
+    type: string
+    format: email
+    description: Correo electrónico.
+    example: johnsmith@email.com
+  role:
+    type: string
+    description: Rol.
+    example: admin
+    enum:
+      - admin
+      - artist
+      - user
+  addressBook:
+    type: array
+    description: Lista de direcciones de envío guardadas.
+    items:
+      $ref: 'Address.yaml'

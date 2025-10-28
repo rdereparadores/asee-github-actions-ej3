@@ -1,0 +1,85 @@
+type: object
+description: Pedido.
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Identificador.
+    example: 123e4567-e89b-12d3-a456-426614174000
+  userId:
+    type: string
+    format: uuid
+    description: Identificador del usuario (comprador).
+  creationDate:
+    type: string
+    format: date-time
+    description: Fecha de creación.
+  status:
+    type: string
+    description: Estado.
+    enum:
+      - pending
+      - paid
+      - shipped
+      - delivered
+      - cancelled
+  items:
+    type: array
+    description: Lista de productos comprados.
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Identificador del producto.
+        title:
+          type: string
+          description: Título del producto.
+          example: All I Want For Christmas Is You.
+        type:
+          type: string
+          description: Tipo de producto.
+          enum:
+            - song
+            - album
+            - merchandising
+        format:
+          type: string
+          required: false
+          description: Formato del producto.
+          enum:
+            - cd
+            - vinyl
+            - cassette
+            - digital
+        img:
+          type: string
+          format: uri
+          description: URL de la imagen del producto.
+          example: https://www.undersounds.com/static/img/idj9h219w1ws.png
+        price:
+          type: integer
+          format: int64
+          description: Precio unitario del producto en céntimos.
+          example: 900
+        quantity:
+          type: integer
+          format: int64
+          description: Unidades compradas del producto.
+          example: 1
+  shipping:
+    type: integer
+    format: int64
+    description: Precio del envío en céntimos.
+    example: 400
+  total:
+    type: integer
+    format: int64
+    description: Precio total en céntimos.
+    example: 1300
+  paymentLink:
+    type: string
+    format: uri
+    description: Enlace de pago.
+    example: https://checkout.stripe.com/pay/cs_test_a1b2c3d4

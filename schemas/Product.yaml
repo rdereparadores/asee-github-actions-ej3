@@ -1,0 +1,42 @@
+type: object
+description: Producto de merchandising.
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Identificador.
+    example: 123e4567-e89b-12d3-a456-426614174000
+  type:
+    type: string
+    description: Tipo de merchandising.
+    enum:
+      - tshirt
+      - hoodie
+      - cap
+      - poster
+      - totebag
+      - stickers
+      - mobilecase
+      - bracelet
+      - mug
+  name:
+    type: string
+    description: Nombre.
+    example: Camiseta
+  description:
+    type: string
+    description: Descripción.
+    example: Un 10% de la recaudación será destinado a XXX.
+  price:
+    type: integer
+    format: int64
+    description: Precio en céntimos de Euro.
+    example: 899
+  author:
+    $ref: 'Artist.yaml'
+  previewImgs:
+    type: array
+    description: Lista de imágenes de vista previa.
+    items:
+      type: string
+      format: uri
